@@ -1,7 +1,7 @@
-import { teaLeaves } from './tea-leaves';
+import {teaLeaves} from './tea-leaves';
 
 describe('teaLeaves', () => {
   it('should work', () => {
-    expect(teaLeaves()).toEqual('tea-leaves');
+    expect(teaLeaves()).toEqual("листовой чай");
   });
 });

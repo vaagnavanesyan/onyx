@@ -2,7 +2,10 @@
   "name": "@onyx/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test:watch" : "nx watch --all -- nx test \\$NX_PROJECT_NAME",
+    "e2e:watch": "nx watch --all --  nx run-many -t build,e2e\n"
+  },
   "private": true,
   "dependencies": {
     "axios": "^1.0.0",

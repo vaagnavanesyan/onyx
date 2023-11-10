@@ -1,3 +1,3 @@
 export function espresso(): string {
-  return 'espresso';
+  return "[зерна (обжаренные) (молотые) + вода (горячая)]"
 }

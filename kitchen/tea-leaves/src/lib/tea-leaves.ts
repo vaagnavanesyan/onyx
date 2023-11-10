@@ -1,3 +1,3 @@
 export function teaLeaves(): string {
-  return 'tea-leaves';
+  return "листовой чай"
 }

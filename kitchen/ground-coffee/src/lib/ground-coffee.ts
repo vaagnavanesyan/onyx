@@ -1,3 +1,5 @@
+import {roastedBeans} from "@onyx/roasted-beans";
+
 export function groundCoffee(): string {
-  return 'ground-coffee';
+  return `${roastedBeans()} (молотые)`
 }

@@ -1,5 +1,5 @@
-import { execSync } from 'child_process';
-import { join } from 'path';
+import {execSync} from 'child_process';
+import {join} from 'path';
 
 describe('CLI tests', () => {
   it('should print a message', () => {
@@ -7,6 +7,9 @@ describe('CLI tests', () => {
 
     const output = execSync(`node ${cliPath}`).toString();
 
-    expect(output).toMatch(/Hello World/);
+    expect(output).toEqual(`🍵 Готовим чай:
+  [листовой чай + вода (горячая)]
+🍵 Чай готов!
+`);
   });
 });

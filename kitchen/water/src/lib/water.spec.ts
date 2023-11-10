@@ -1,7 +1,7 @@
-import { water } from './water';
+import {water} from './water';
 
 describe('water', () => {
   it('should work', () => {
-    expect(water()).toEqual('water');
+    expect(water()).toEqual("вода (горячая)");
   });
 });

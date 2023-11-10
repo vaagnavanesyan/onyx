@@ -1,3 +1,4 @@
+
 export function water(): string {
-  return 'water';
+  return "вода (горячая)";
 }
