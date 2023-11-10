@@ -1,3 +1,11 @@
+Составляем меню:
+```bash
+nx g @nx/node:application espresso --directory=menu/espresso
+nx g @nx/node:application americano --directory=menu/americano
+nx g @nx/node:application latte --directory=menu/latte
+nx g @nx/node:application tea --directory=menu/tea
+```
+
 # Onyx
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>

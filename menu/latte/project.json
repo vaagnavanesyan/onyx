@@ -1,0 +1,70 @@
+{
+  "name": "latte",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "menu/latte/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/menu/latte",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "menu/latte/src/main.ts",
+        "tsConfig": "menu/latte/tsconfig.app.json",
+        "assets": ["menu/latte/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "latte:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "latte:build:development"
+        },
+        "production": {
+          "buildTarget": "latte:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["menu/latte/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "menu/latte/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

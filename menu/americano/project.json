@@ -1,0 +1,70 @@
+{
+  "name": "americano",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "menu/americano/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/menu/americano",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "menu/americano/src/main.ts",
+        "tsConfig": "menu/americano/tsconfig.app.json",
+        "assets": ["menu/americano/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "americano:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "americano:build:development"
+        },
+        "production": {
+          "buildTarget": "americano:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["menu/americano/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "menu/americano/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

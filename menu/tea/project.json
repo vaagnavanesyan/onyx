@@ -1,0 +1,70 @@
+{
+  "name": "tea",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "menu/tea/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/menu/tea",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "menu/tea/src/main.ts",
+        "tsConfig": "menu/tea/tsconfig.app.json",
+        "assets": ["menu/tea/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "tea:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "tea:build:development"
+        },
+        "production": {
+          "buildTarget": "tea:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["menu/tea/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "menu/tea/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
