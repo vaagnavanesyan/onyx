@@ -1,0 +1,40 @@
+{
+  "name": "roasted-beans",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "kitchen/roasted-beans/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/kitchen/roasted-beans",
+        "main": "kitchen/roasted-beans/src/index.ts",
+        "tsConfig": "kitchen/roasted-beans/tsconfig.lib.json",
+        "assets": ["kitchen/roasted-beans/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs roasted-beans {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "kitchen/roasted-beans/**/*.ts",
+          "kitchen/roasted-beans/package.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "kitchen/roasted-beans/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,23 @@
+{
+  "name": "tea-leaves",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "kitchen/tea-leaves/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["kitchen/tea-leaves/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "kitchen/tea-leaves/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

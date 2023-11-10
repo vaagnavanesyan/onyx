@@ -6,6 +6,15 @@ nx g @nx/node:application latte --directory=menu/latte
 nx g @nx/node:application tea --directory=menu/tea
 ```
 
+Организуем кухню:
+```bash
+nx g @nx/js:library water --directory=kitchen/water --bundler=none --unitTestRunner=jest --projectNameAndRootFormat=as-provided --no-interactive
+nx g @nx/js:library tea-leaves --directory=kitchen/tea-leaves --bundler=none --unitTestRunner=jest --projectNameAndRootFormat=as-provided --no-interactive
+nx g @nx/js:library espresso --directory=kitchen/espresso --bundler=none --unitTestRunner=jest --projectNameAndRootFormat=as-provided --no-interactive
+
+nx g @nx/js:library roasted-beans --directory=kitchen/roasted-beans --publishable --importPath @onyx/roasted-beans --bundler=tsc --unitTestRunner=jest --projectNameAndRootFormat=as-provided --no-interactive
+nx g @nx/js:library ground-coffee --directory=kitchen/ground-coffee --publishable --importPath @onyx/ground-coffee --bundler=tsc --unitTestRunner=jest --projectNameAndRootFormat=as-provided --no-interactive
+```
 # Onyx
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>

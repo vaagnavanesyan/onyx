@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@onyx/espresso": ["kitchen/espresso/src/index.ts"],
+      "@onyx/ground-coffee": ["kitchen/ground-coffee/src/index.ts"],
+      "@onyx/roasted-beans": ["kitchen/roasted-beans/src/index.ts"],
+      "@onyx/tea-leaves": ["kitchen/tea-leaves/src/index.ts"],
+      "@onyx/water": ["kitchen/water/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
