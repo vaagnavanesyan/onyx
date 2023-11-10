@@ -23,13 +23,13 @@ jobs:
 
       - run: npm ci
 
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v4
+#      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+#        uses: nrwl/nx-set-shas@v4
+#
+#      - run: |
+#          echo "BASE: ${{ env.NX_BASE }}"
+#          echo "HEAD: ${{ env.NX_HEAD }}"
 
-      - run: |
-          echo "BASE: ${{ env.NX_BASE }}"
-          echo "HEAD: ${{ env.NX_HEAD }}"
-
-      - run: npx nx affected -t build,test,e2e
+      - run: npx nx affected -t build,test,e2e --base=last-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

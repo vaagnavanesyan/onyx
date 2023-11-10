@@ -1,3 +1,3 @@
 export function roastedBeans(): string {
-  return "зерна (обжаренные)"
+  return "зерна (обжаренные [2])"
 }
