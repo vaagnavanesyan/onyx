@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "test:watch": "nx watch --all -- nx test \\$NX_PROJECT_NAME",
-    "e2e:watch": "nx run-many -t build && nx watch --all -- nx run-many -t build,e2e"
+    "e2e:watch": "nx run-many -t build && nx watch --all -- nx run-many -t build,e2e",
+    "affected": "nx graph --affected",
+    "test:affected": "nx affected -t test"
   },
   "private": true,
   "dependencies": {
