@@ -1,14 +1,9 @@
-const makeEspresso = () => {
-  console.group("☕️ Готовим эспрессо:");
-  const espresso = "[зерна (обжаренные) (молотые) + вода (горячая)]"
-  console.log(espresso);
-  console.groupEnd();
-  console.log("☕️ Эспрессо готов!");
-  return espresso
-}
+import {espresso} from "@onyx/espresso";
+import {water} from "@onyx/water";
+
 const makeAmericano = () => {
   console.group("☕️ 💧 Готовим американо:");
-  const americano = `${makeEspresso()} + вода (горячая)`
+  const americano = `${espresso()} + ${water()}`
   console.log(americano);
   console.groupEnd();
   console.log("☕️ 💧 Американо готов!");

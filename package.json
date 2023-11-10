@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "test:watch" : "nx watch --all -- nx test \\$NX_PROJECT_NAME",
-    "e2e:watch": "nx watch --all --  nx run-many -t build,e2e\n"
+    "test:watch": "nx watch --all -- nx test \\$NX_PROJECT_NAME",
+    "e2e:watch": "nx run-many -t build && nx watch --all -- nx run-many -t build,e2e"
   },
   "private": true,
   "dependencies": {
