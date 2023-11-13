@@ -18,6 +18,7 @@ jobs:
 
       - run: npm ci
 
+      - uses: nrwl/nx-set-shas@v3
       - run: npx nx affected -t build,test,e2e
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
