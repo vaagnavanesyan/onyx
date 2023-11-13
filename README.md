@@ -1,6 +1,5 @@
 Составляем меню:
 ```bash
-nx g @nx/node:application espresso --directory=menu/espresso
 nx g @nx/node:application americano --directory=menu/americano
 nx g @nx/node:application latte --directory=menu/latte
 nx g @nx/node:application tea --directory=menu/tea
