@@ -6,10 +6,15 @@ on:
       - 'main'
 
 jobs:
-  release:
+  prepare:
     runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      actions: 'read'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: configure git
         run: |
@@ -18,7 +23,13 @@ jobs:
 
       - run: npm ci
 
-      - uses: nrwl/nx-set-shas@v3
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v4
+
+      - run: |
+          echo "BASE: ${{ env.NX_BASE }}"
+          echo "HEAD: ${{ env.NX_HEAD }}"
+
       - run: npx nx affected -t build,test,e2e
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
