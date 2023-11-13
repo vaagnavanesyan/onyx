@@ -1,0 +1,28 @@
+name: other-branches
+
+on:
+  push:
+    branches-ignore:
+      - 'main'
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      actions: 'read'
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: configure git
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+      - run: npm ci
+
+      - run: npx nx affected -t build,test,e2e --base=last-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
