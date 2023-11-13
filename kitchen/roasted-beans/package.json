@@ -1,6 +1,6 @@
 {
   "name": "@onyx/roasted-beans",
-  "version": "0.0.0-semantic-release",
+  "version": "1.0.0",
   "dependencies": {
     "tslib": "^2.3.0"
   },
