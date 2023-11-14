@@ -34,6 +34,15 @@
       "options": {
         "jestConfig": "kitchen/roasted-beans/jest.config.ts"
       }
+    },
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "github": true,
+        "changelog": true,
+        "npm": true,
+        "tagFormat": "roasted-beans-v${VERSION}"
+      }
     }
   },
   "tags": []
