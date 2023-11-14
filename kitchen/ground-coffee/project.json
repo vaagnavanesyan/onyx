@@ -34,6 +34,12 @@
       "options": {
         "jestConfig": "kitchen/ground-coffee/jest.config.ts"
       }
+    },
+    "release": {
+      "executor": "nx-release:build-update-publish",
+      "options": {
+        "libName": "ground-coffee"
+      }
     }
   },
   "tags": []
