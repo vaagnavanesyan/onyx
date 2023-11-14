@@ -64,6 +64,15 @@
       "options": {
         "jestConfig": "menu/latte/jest.config.ts"
       }
+    },
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "github": true,
+        "changelog": true,
+        "npm": true,
+        "tagFormat": "latte-v${VERSION}"
+      }
     }
   },
   "tags": []
