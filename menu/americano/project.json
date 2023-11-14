@@ -64,6 +64,15 @@
       "options": {
         "jestConfig": "menu/americano/jest.config.ts"
       }
+    },
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "github": true,
+        "changelog": true,
+        "npm": true,
+        "tagFormat": "americano-v${VERSION}"
+      }
     }
   },
   "tags": []
