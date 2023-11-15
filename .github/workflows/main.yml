@@ -23,6 +23,8 @@ jobs:
       - run: npx nx affected -t version --base=main~1 --parallel=1 --push=true --trackDeps=true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Tag last-release
         shell: bash
         run: |
