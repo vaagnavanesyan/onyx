@@ -40,8 +40,7 @@
       "options": {
         "preset": "conventional",
         "postTargets": [
-          "ground-coffee:github",
-          "ground-coffee:npm"
+          "ground-coffee:github"
         ]
       }
     },
@@ -50,12 +49,6 @@
       "options": {
         "tag": "{tag}",
         "notes": "{notes}"
-      }
-    },
-    "npm": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public"
       }
     }
   },
