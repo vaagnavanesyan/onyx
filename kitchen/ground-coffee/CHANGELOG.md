@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/vaagnavanesyan/onyx/compare/ground-coffee-0.1.0...ground-coffee-0.2.0) (2023-11-15)
+
+
+### Features
+
+* change ([36b6d73](https://github.com/vaagnavanesyan/onyx/commit/36b6d73ce5139a9e7298dadc5db40404994cbefe))
+
 ## [0.1.0](https://github.com/vaagnavanesyan/onyx/compare/ground-coffee-0.0.1...ground-coffee-0.1.0) (2023-11-14)
 
 ### Dependency Updates
