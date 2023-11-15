@@ -70,8 +70,15 @@
       "options": {
         "preset": "conventional",
         "postTargets": [
-          "tea:github"
+          "tea:github",
+          "tea:npm"
         ]
+      }
+    },
+    "npm": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
       }
     },
     "github": {
